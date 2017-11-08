@@ -75,15 +75,15 @@ public class Turtle {
         g.setColor(pcolor.get(i));
       }
 
-      g.drawLine((int)(points.get(i).getX() + offsetX - x), (int)(points.get(i).getY() + offsetY - y),
-                 (int)(points.get(i+1).getX() + offsetX - x), (int)(points.get(i+1).getY() + offsetY - y));
+      g.drawLine((int)(points.get(i).getX() + (offsetX - x)), (int)(points.get(i).getY() + (offsetY - y)),
+                 (int)(points.get(i+1).getX() + (offsetX - x)), (int)(points.get(i+1).getY() + (offsetY - y)));
 
       g.setColor(new Color(0, 200, 0));
       g.fillOval((int) (rcenter.getX() - rsize / 2), (int) (rcenter.getY() - rsize / 2), rsize, rsize);
       g.setColor(pcolor.get(0));
     }
   }
-  
+
   public boolean inTurtle(double x, double y) {
     double distance = Math.sqrt(Math.pow(x - rcenter.getX(), 2) + Math.pow(y - rcenter.getY(), 2));
     if (distance <= rsize / 2) {
